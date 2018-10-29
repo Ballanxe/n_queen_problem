@@ -21,3 +21,29 @@ Create a docker container
 ```
 docker run -it n-queens
 ```
+
+## Runinng Tests
+
+### Step 1 
+
+Start the container 
+
+```
+$ docker start n-queens
+``` 
+
+### Step 2
+
+Create a interactive mode
+
+```
+$ docker exec -it n-queens bash
+```
+
+### Step 3
+
+Run pytest
+
+```
+$ pytest
+```
