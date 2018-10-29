@@ -48,6 +48,7 @@ class NQueens(BacktrackingMixing):
                 self.solutions_count += 1
                 self.solutions.append(positions)
 
+
         return self.solutions
 
     def print_solutions(self):

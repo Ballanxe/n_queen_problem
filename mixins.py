@@ -1,4 +1,5 @@
 
+
 class BacktrackingMixing:
 
 	"""
@@ -6,7 +7,8 @@ class BacktrackingMixing:
 	Also, I created the get_positions() functions, in order to return a list of tuples printable by the parents print_solutions() function   
 
 
-	"""
+	# """
+
 
 	def solve_backtracking(self, n):
 
@@ -46,11 +48,21 @@ class BacktrackingMixing:
 				break
 
 		for result in results:
-			new_set = tuple(result[i][1] for i in range(len(result))) 
+			new_set = tuple(result[i][1]-1 for i in range(len(result))) 
 			final_results.append(new_set)
 
 		return final_results
 
+	def print_solutions(self):
 
+	    N=self.size
+	    solutions = self.solutions
+
+	    for solution in solutions:
+
+	        sol = solutions.index(solution) + 1
+	        print('Solution {}: {} \n'.format(sol, solution))
+	            
+	        print("\n".join(' o ' * i + ' X ' + ' o ' * (N-i-1) for i in solution) + "\n\n")
 
 
