@@ -33,6 +33,7 @@ class NQueens(BacktrackingMixin):
             self.solve_brute_force()
         elif self.type == 2:
             self.solutions = self.solve_backtracking(self.size)
+            self.solutions_count = len(self.solutions)
 
     def solve_brute_force(self):
 

@@ -1,7 +1,20 @@
-from sqlalchemy import Column, Integer, PickleType
+import json
+
+from sqlalchemy import Column, Integer, PickleType, String
 from sqlalchemy.schema import UniqueConstraint
+from sqlalchemy.types import TypeDecorator
 from db import Base
 
+
+class Json(TypeDecorator):
+
+    impl = String
+
+    def process_bind_param(self, value, dialect):
+        return json.dumps(value)
+
+    def process_result_value(self, value, dialect):
+        return json.loads(value)
 
 
 class Solution(Base):
@@ -10,7 +23,7 @@ class Solution(Base):
 
 	pk = Column('id',Integer, primary_key=True)
 	n_queen = Column('Queen number',Integer)
-	solution = Column('Solution', PickleType(), unique=True)
+	solution = Column('Solution', Json(), unique=True)
 	
 
 	def __init__(self, n_queen, solution):
