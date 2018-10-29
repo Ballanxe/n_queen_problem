@@ -3,12 +3,12 @@ from itertools import permutations
 
 from sqlalchemy.engine import create_engine
 
-from mixins import BacktrackingMixing
+from mixins import BacktrackingMixin
 
 from models import Solution
 
 
-class NQueens(BacktrackingMixing):
+class NQueens(BacktrackingMixin):
     """
     Creates an object with the amount of queens, and its respective solutions. The solution was borrowed from this author https://goo.gl/xd1bj1 and refactorized with OOP.
 

@@ -1,4 +1,4 @@
-from eight_queens import NQueens
+from n_queens import NQueens
 from utils import get_size_input, store_solutions, get_type_algorithm
 
 

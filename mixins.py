@@ -1,6 +1,6 @@
 
 
-class BacktrackingMixing:
+class BacktrackingMixin:
 
 	"""
 	Mixing to use backtracking algorithm to solve the queens problem borrowed from this site https://goo.gl/5ZWtrh and refactorized with OOP.
